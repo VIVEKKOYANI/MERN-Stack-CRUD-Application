@@ -19,6 +19,13 @@ mongoose.connect(mongoose__Url, { useNewUrlParser: true }).then(
     console.log("There is a problem" + err);
   }
 );
+
+ // All the express routes
+ const employeeRoutes = require('../Routes/Employee.route');
+
+ // Routes Configuration
+ app.use('/employees', employeeRoutes);
+
 const app = express();
 app.use(bodyparser.json());
 app.use(core());
